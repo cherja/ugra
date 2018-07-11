@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="wrapper">
-    <button :class="['hamburger', ' hamburger--collapse', { 'is-active': isShow }]" @click="isShow =!isShow" type="button">
-    <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-    </span>
+    <button :class="['hamb','hamburger', ' hamburger--collapse', { 'is-active': isShow }]" @click="isShow =!isShow" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"/>
+      </span>
     </button>
    <header>
       <nav :class="{active: isShow }">
@@ -144,7 +144,7 @@ export default {
 .wrapper {
   max-width: 1920px;
   margin: auto;
-  button {
+  .hamb {
   display: none;
   @include screen-md {
    display: block;
