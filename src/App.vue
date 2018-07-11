@@ -76,7 +76,7 @@ export default {
   box-sizing: border-box;
 }
 
-h2{
+h2 {
   font-size: 48px;
   font-weight: 100;
 }
@@ -84,13 +84,20 @@ h2{
 .wrapper {
   max-width: 1920px;
   margin: auto;
-  .hamb {
-  display: none;
-  @include screen-md {
-   display: block;
-   outline: none;
-  }
 }
+
+.container {
+  margin: auto;
+  max-width: 1250px;
+}
+
+.hamb {
+  display: none;
+
+  @include screen-md {
+    display: block;
+    outline: none;
+  }
 }
 
 header {
@@ -101,6 +108,7 @@ header {
     flex-wrap: wrap;
     min-height: 140px;
     background-color: #262f44;
+
     @include screen-md {
       flex-direction: column;
       position: absolute;
@@ -111,40 +119,36 @@ header {
       height: 50%;
       display: none;
     }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      margin-right: 10px;
+
+      img {
+        padding-right: 8px;
+      }
+    }
+
+    input {
+      width: 222px;
+      height: 40px;
+      background: none;
+      background-color: rgb( 44, 54, 77 );
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      color: white;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    input:invalid {
+      background: url(./assets/search.png) no-repeat center left 20px;
+      background-color: rgb( 44, 54, 77 );
+    }
   }
-  a {
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-  margin-right: 10px;
-
-  img{
-    padding-right: 8px;
-  }
-}
-}
-
-input {
-  width: 222px;
-  height: 40px;
-  background: none;
-  background-color: rgb( 44, 54, 77 );
-  border: none;
-  border-radius: 20px;
-  outline:none;
-  color: white;
-  font-size: 18px;
-  padding: 0 20px;
-}
-
-input:invalid {
-  background: url(./assets/search.png) no-repeat center left 20px;
-  background-color: rgb( 44, 54, 77 );
-}
-
-.container{
-  margin: auto;
-  max-width: 1250px;
 }
 
 .header-content {
@@ -156,18 +160,19 @@ input:invalid {
   height: calc(100vh - 140px);
   min-height: 530px;
   width: 100%;
+  max-height: 1200px;
   position: relative;
 
-  h1{
+  h1 {
     font-size: 72px;
     font-weight: 900;
     font-family: "UL";
     padding-bottom: 50px;
-     @include screen-lg {
-    font-size: 36px;
-  }
-  }
 
+    @include screen-lg {
+      font-size: 36px;
+    }
+  }
   span {
     font-family: "UL";
     font-weight: 100;
@@ -183,6 +188,7 @@ input:invalid {
     text-decoration: none;
     background-color: transparent;
   }
+
   .social-network {
     display: flex;
     justify-content: center;
@@ -190,7 +196,8 @@ input:invalid {
     bottom: 30px;
     right: 30px;
     align-items: center;
-    p{
+
+    p {
       @include screen-md {
         display: none;
       }
@@ -198,107 +205,8 @@ input:invalid {
   }
 }
 
-.main-text{
-  margin: 20px 0;
-  width:650px;
-  text-align: center;
-
-  p{
-    font-weight: 600;
-    line-height: 1.8;
-    margin: 20px 0;
-  }
-}
-.egg{
-  margin: 20px 0;
-  width:550px;
-  height: 500px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.egg-one{
-    background-image: url(./assets/egg-one.png);
-}
-.egg-two{
-    background-image: url(./assets/egg-two.png);
-}
-
-.egg-three{
-    background-image: url(./assets/egg-three.png);
-}
-
-.egg-four{
-    background-image: url(./assets/egg-four.png);
-}
-
-.egg-five{
-    background-image: url(./assets/egg-five.png);
-}
-
-.egg-six{
-    background-image: url(./assets/egg-six.png);
-}
-.active{
+.active {
   display: flex;
-}
-
-.novelty{
-  width: 220px;
-  height: 220px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-bottom: 40px;
-}
-
-.novelty-one {
-    background-image: url(./assets/camera.png);
-}
-
-.novelty-two {
-    background-image: url(./assets/train.png);
-}
-
-.novelty-three {
-    background-image: url(./assets/plant.png);
-}
-
-.novelty-four {
-    background-image: url(./assets/computerization.png);
-}
-
-.main-footer{
-  display: flex;
-  justify-content: space-between;
-  padding-top: 50px;
-  p{
-    text-decoration:underline;
-  }
-}
-
-.footer{
-  padding: 50px 0;
-  text-align: center;
-  width: 100%;
-  background-color: #eef0f6;
-}
-footer{
-  padding: 50px;
-  background-color: #262f44;
-}
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  nav{
-    display: flex;
-    flex-direction: column;
-    color: white;
-  }
-  a{
-    color: #5b7cc9;
-  }
 }
 
 </style>

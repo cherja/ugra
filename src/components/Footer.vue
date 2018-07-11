@@ -34,22 +34,23 @@
 </template>
 
 <style scoped lang="scss">
-// footer{
-//   padding: 50px;
-//   background-color: #262f44;
-// }
 
-// .footer-content {
-//   display: flex;
-//   justify-content: space-between;
-//   nav{
-//     display: flex;
-//     flex-direction: column;
-//     color: white;
-//   }
-//   a{
-//     color: #5b7cc9;
-//   }
-// }
+footer{
+  padding: 50px;
+  background-color: #262f44;
+}
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  nav {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+
+  a {
+    color: #5b7cc9;
+  }
+}
 </style>
