@@ -98,6 +98,7 @@
 </template>
 
 <style scoped lang="scss">
+@import "../helpers";
 
 .main-header {
   width:100%;
@@ -106,7 +107,9 @@
   flex-wrap: wrap;
   align-items: center;
   font-size: 14px;
-
+  @include screen-sm {
+    font-size: 11px;
+  }
   button {
     width: 180px;
     height: 40px;
@@ -131,8 +134,15 @@
   display: flex;
   justify-content: space-between;
   padding-top: 50px;
+   @include screen-md {
+    display: block;
+  }
+
   p {
     text-decoration:underline;
+    line-height: 1.5;
+    color: #6685cd;
+    margin: 20px;
   }
 }
 
@@ -154,6 +164,7 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  margin: auto;
   margin-bottom: 40px;
 }
 
@@ -180,6 +191,14 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  @include screen-sm {
+    width:375px;
+    height: 350px;
+  }
+   @include screen-xs {
+    width:275px;
+    height: 250px;
+  }
 }
 
 .egg-one {

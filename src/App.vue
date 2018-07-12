@@ -7,11 +7,10 @@
     </button>
    <header>
       <nav :class="{active: isShow }">
-        <img src="./assets/logo.png" alt="Логотип">
+        <a href=""><img src="./assets/logo.png" alt="Логотип"></a>
         <a href="">ПРОДУКЦИЯ И УСЛУГИ</a>
         <a href="">РЕШЕНИЯ ПО АВТОМАТИЗАЦИИ</a>
         <a href="">О КОМПАНИИ</a>
-        <a href="">РЕШЕНИЯ ПО АВТОМАТИЗАЦИИ</a>
         <a href="tel: +78001234545"><img src="./assets/call.png">8(800) 123 45 45</a>
         <a href="mailto:ugpa@info.ru"><img src="./assets/mail.png">ugpa@info.ru</a>
         <input type="text" required>
@@ -24,7 +23,7 @@
          </h1>
          <button>ПОДРОБНЕЕ</button>
          </div>
-         <div class="social-network">
+         <div class="social-network social-network__header">
           <p>© 2018 ООО “НПП ”Югпромавтоматизация”</p>
           <a href="" target="_blank"><img src="./assets/vk.svg"></a>
           <a href="" target="_blank"><img src="./assets/twitter.svg"></a>
@@ -79,6 +78,9 @@ export default {
 h2 {
   font-size: 48px;
   font-weight: 100;
+  @include screen-sm {
+    font-size: 35px;
+  }
 }
 
 .wrapper {
@@ -89,12 +91,20 @@ h2 {
 .container {
   margin: auto;
   max-width: 1250px;
+
+  @include screen-lg {
+    max-width: 990px;
+  }
+
+   @include screen-sm {
+     max-width: 690px;
+  }
 }
 
 .hamb {
   display: none;
 
-  @include screen-md {
+  @include screen-lg {
     display: block;
     outline: none;
   }
@@ -108,47 +118,57 @@ header {
     flex-wrap: wrap;
     min-height: 140px;
     background-color: #262f44;
-
-    @include screen-md {
+    a:nth-child(3), a:nth-child(4) {
+      color: #6685cd;
+      text-decoration: underline;
+    }
+    a:nth-child(6) {
+      text-decoration: underline;
+    }
+    @include screen-lg {
       flex-direction: column;
       position: absolute;
       z-index: 9998;
       top: 50;
       right: 0;
       width: 100%;
-      height: 50%;
+      height: 80%;
       display: none;
     }
-
-    a {
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-      margin-right: 10px;
-
-      img {
-        padding-right: 8px;
-      }
-    }
-
-    input {
-      width: 222px;
-      height: 40px;
-      background: none;
-      background-color: rgb( 44, 54, 77 );
-      border: none;
-      border-radius: 20px;
-      outline:none;
-      color: white;
-      font-size: 18px;
-      padding: 0 20px;
-    }
-
-    input:invalid {
-      background: url(./assets/search.png) no-repeat center left 20px;
-      background-color: rgb( 44, 54, 77 );
-    }
   }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  margin-right: 10px;
+  @include screen-sm {
+    font-size: 11px;
+  }
+
+  img {
+    padding-right: 8px;
+  }
+}
+
+input {
+  width: 222px;
+  height: 40px;
+  background: none;
+  background-color: rgb( 44, 54, 77 );
+  border: none;
+  border-radius: 20px;
+  outline:none;
+  color: white;
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+input:invalid {
+  background: url(./assets/search.png) no-repeat center left 20px;
+  background-color: rgb( 44, 54, 77 );
 }
 
 .header-content {
@@ -188,21 +208,25 @@ header {
     text-decoration: none;
     background-color: transparent;
   }
+}
 
-  .social-network {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    align-items: center;
+.social-network {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 
-    p {
-      @include screen-md {
-        display: none;
-      }
+  p {
+    @include screen-md {
+      display: none;
     }
   }
+}
+
+.social-network__header {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
 }
 
 .active {
