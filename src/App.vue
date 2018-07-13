@@ -1,18 +1,23 @@
 <template>
   <div id="app" class="wrapper">
-    <button :class="['hamb','hamburger', ' hamburger--collapse', { 'is-active': isShow }]" @click="isShow =!isShow" type="button">
+    <button
+      :class="['hamb', 'hamburger', ' hamburger--collapse', { 'is-active': isShow }]"
+      @click="isShow = !isShow"
+    >
       <span class="hamburger-box">
         <span class="hamburger-inner"/>
       </span>
     </button>
    <header>
-      <nav :class="{active: isShow }">
-        <a href=""><img src="./assets/logo.png" alt="Логотип"></a>
+      <slider :slides="slides" />
+      <nav :class="{ active: isShow }">
+        <a href=""><img src="./assets/images/logo.png" alt="Логотип"></a>
+        <router-link to="/home">Home</router-link>
         <a href="">ПРОДУКЦИЯ И УСЛУГИ</a>
         <a href="">РЕШЕНИЯ ПО АВТОМАТИЗАЦИИ</a>
         <a href="">О КОМПАНИИ</a>
-        <a href="tel: +78001234545"><img src="./assets/call.png">8(800) 123 45 45</a>
-        <a href="mailto:ugpa@info.ru"><img src="./assets/mail.png">ugpa@info.ru</a>
+        <a href="tel: +78001234545"><img src="./assets/images/call.png">8(800) 123 45 45</a>
+        <a href="mailto:ugpa@info.ru"><img src="./assets/images/mail.png">ugpa@info.ru</a>
         <input type="text" required>
       </nav>
        <div class="header-content">
@@ -25,13 +30,15 @@
          </div>
          <div class="social-network social-network__header">
           <p>© 2018 ООО “НПП ”Югпромавтоматизация”</p>
-          <a href="" target="_blank"><img src="./assets/vk.svg"></a>
-          <a href="" target="_blank"><img src="./assets/twitter.svg"></a>
-          <a href="" target="_blank"><img src="./assets/facebook.svg"></a>
+          <a href="" target="_blank"><img src="./assets/images/vk.svg"></a>
+          <a href="" target="_blank"><img src="./assets/images/twitter.svg"></a>
+          <a href="" target="_blank"><img src="./assets/images/facebook.svg"></a>
          </div>
        </div>
     </header>
-    <mainvue/>
+    <div>
+      <router-view />
+     </div>
     <footervue/>
   </div>
 </template>
@@ -39,16 +46,40 @@
 <script>
 import mainvue from './components/Main.vue'
 import footervue from './components/Footer.vue'
+import slider from './components/Slider.vue'
 
 export default {
   components: {
     mainvue,
-    footervue
+    footervue,
+    slider
   },
   name: 'app',
   data () {
     return {
-      isShow: false
+      isShow: false,
+      slides: [
+        {
+          img: 'http://img.desktopwallpapers.ru/animals/pics/wide/1920x1080/37fff35ef8adf56c3d9c80be263d2daa.jpg',
+          title: 'Первый слайд',
+          link: '#'
+        },
+        {
+          img: 'http://lookw.ru/1/184/1380317242-168537.jpg',
+          title: 'Vtoroy слайд',
+          link: '#'
+        },
+        {
+          img: 'http://www.1280x800.net/large/201211/9315.jpg',
+          title: 'tretiy слайд',
+          link: '#'
+        },
+        {
+          img: 'http://www.1280x800.net/large/201211/9315.jpg',
+          title: '4etvertiy слайд',
+          link: '#'
+        }
+      ]
     }
   }
 }
@@ -160,20 +191,20 @@ input {
   background-color: rgb( 44, 54, 77 );
   border: none;
   border-radius: 20px;
-  outline:none;
+  outline: none;
   color: white;
   font-size: 18px;
   padding: 0 20px;
 }
 
 input:invalid {
-  background: url(./assets/search.png) no-repeat center left 20px;
+  background: url(./assets/images/search.png) no-repeat center left 20px;
   background-color: rgb( 44, 54, 77 );
 }
 
 .header-content {
   color: white;
-  background-image: url(./assets/EcoStruxure_Low-res.jpg);
+  background-image: url(./assets/images/EcoStruxure_Low-res.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

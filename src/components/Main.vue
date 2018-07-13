@@ -169,19 +169,19 @@
 }
 
 .novelty-one {
-  background-image: url(../assets/camera.png);
+  background-image: url(../assets/images/camera.png);
 }
 
 .novelty-two {
-  background-image: url(../assets/train.png);
+  background-image: url(../assets/images/train.png);
 }
 
 .novelty-three {
-  background-image: url(../assets/plant.png);
+  background-image: url(../assets/images/plant.png);
 }
 
 .novelty-four {
-  background-image: url(../assets/computerization.png);
+  background-image: url(../assets/images/computerization.png);
 }
 
 .egg {
@@ -202,26 +202,26 @@
 }
 
 .egg-one {
-  background-image: url(../assets/egg-one.png);
+  background-image: url(../assets/images/egg-one.png);
 }
 .egg-two {
-  background-image: url(../assets/egg-two.png);
+  background-image: url(../assets/images/egg-two.png);
 }
 
 .egg-three {
-  background-image: url(../assets/egg-three.png);
+  background-image: url(../assets/images/egg-three.png);
 }
 
 .egg-four {
-  background-image: url(../assets/egg-four.png);
+  background-image: url(../assets/images/egg-four.png);
 }
 
 .egg-five {
-  background-image: url(../assets/egg-five.png);
+  background-image: url(../assets/images/egg-five.png);
 }
 
 .egg-six {
-  background-image: url(../assets/egg-six.png);
+  background-image: url(../assets/images/egg-six.png);
 }
 
 </style>

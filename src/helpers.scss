@@ -21,3 +21,10 @@
     @content;
   }
 }
+
+@mixin screen-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
